@@ -21,13 +21,13 @@ export default List;
 
 const ListDiv = styled.div`
   width: 100%;
+  padding: 4px;
   border: 1px solid gray;
   display: flex;
-  gap: 2px;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 const ProfileBtn = styled(Button)({
-  height: '20%',
-  margin : 'auto',
-})
-
+  height: "50px",
+});

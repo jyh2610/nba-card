@@ -13,6 +13,6 @@ interceptors.request.use((config) => {
 
 interceptors.response.use(
   (response) => response,
-  (error) => Promise.reject(error.message)
+  (error) => Promise.reject(error.message),
 );
 export default instanceAPI;

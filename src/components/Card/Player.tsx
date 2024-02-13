@@ -1,17 +1,14 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 function Player() {
-  return (
-    <CardDiv>Player</CardDiv>
-  )
+  return <CardDiv>Player</CardDiv>;
 }
 
-export default Player
-
+export default Player;
 
 const CardDiv = styled.div({
-    border: '1px solid gray',
-    borderRadius: '14px',
-    width: '30%',
-    height: '300px'
-})
+  border: "1px solid gray",
+  borderRadius: "14px",
+  width: "30%",
+  height: "300px",
+});
