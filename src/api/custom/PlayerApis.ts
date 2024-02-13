@@ -15,3 +15,15 @@ export const getAllPlayers = async (page = 0) => {
 
   return res;
 };
+
+export const searchPlayer = async (name: string) => {
+  const res = await api.get({
+    url: "/players",
+    options: {
+      params: {
+        search: name,
+      },
+    },
+  });
+  return res.data;
+};

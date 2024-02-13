@@ -1,13 +1,11 @@
 import styled from "@emotion/styled";
 
 import PlayerLists from "./components/PlayerList/PlayerLists";
-import TeamLists from "./components/TeamList/TeamLists";
 
 function App() {
   return (
     <LayoutDiv>
       <PlayerLists />
-      <TeamLists />
     </LayoutDiv>
   );
 }
