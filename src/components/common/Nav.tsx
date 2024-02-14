@@ -5,7 +5,7 @@ import { styled, alpha } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
-import Input from "./Input";
+import Input from "../search/Input";
 
 function Nav() {
   return (

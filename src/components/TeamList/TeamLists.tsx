@@ -9,7 +9,6 @@ function TeamLists() {
   useLayoutEffect(() => {
     async function getTeams() {
       const data = await getTeamList();
-
       console.log(data);
     }
     getTeams();

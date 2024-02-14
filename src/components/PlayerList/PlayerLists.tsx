@@ -4,6 +4,8 @@ import styled from "@emotion/styled";
 
 import List from "./List";
 import { getAllPlayers } from "../../api/custom/PlayerApis";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { getPlayer } from "../../app/player";
 
 export interface PlayerShortProfile {
   id: number;
@@ -12,16 +14,18 @@ export interface PlayerShortProfile {
   position: string;
 }
 function PlayerLists() {
-  const [page, setPage] = useState(0);
-  const [list, setList] = useState<PlayerShortProfile[]>([]);
+  const dispatch = useAppDispatch();
+  const playerLists: PlayerShortProfile[] = useAppSelector((state) => state.player);
+  const [page, setPage] = useState(1);
   const loaderRef = useRef<HTMLDivElement>(null);
+  console.log(playerLists);
 
   const fetchData = async () => {
     try {
       const response = await getAllPlayers(page);
-      const data = response.data;
-      setList((prevList) => [...prevList, ...data]);
       setPage((prev) => prev + 1);
+      const data = response.data;
+      dispatch(getPlayer(data));
     } catch (error) {
       console.error("Error fetching players:", error);
     }
@@ -29,7 +33,7 @@ function PlayerLists() {
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
+      if (entries[0].isIntersecting || PlayerLists.length > 10) {
         fetchData();
       }
     });
@@ -46,7 +50,7 @@ function PlayerLists() {
 
   return (
     <ListDiv>
-      {list.map((player: PlayerShortProfile) => {
+      {playerLists.map((player: PlayerShortProfile) => {
         return <List key={player.id} player={player} />;
       })}
       <div ref={loaderRef}>Loading ...</div>
