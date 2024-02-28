@@ -1,9 +1,10 @@
 import axios from "axios";
 
 const instanceAPI = axios.create({
-  baseURL: "https://www.balldontlie.io/api/v1",
+  baseURL: "https://api.balldontlie.io/v1",
   headers: {
     "Content-Type": "application/json",
+    Authorization: "0b033bf6-33e4-4fce-a96c-71fef893c250",
   },
 });
 const interceptors = instanceAPI.interceptors;

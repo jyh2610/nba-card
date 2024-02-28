@@ -22,7 +22,8 @@ function PlayerLists() {
 
   const fetchData = async () => {
     try {
-      const response = await getAllPlayers(page);
+      const cousor = page === 1 ? page - 1 : (page - 1) * 10;
+      const response = await getAllPlayers(cousor);
       setPage((prev) => prev + 1);
       const data = response.data;
       dispatch(getPlayer(data));
