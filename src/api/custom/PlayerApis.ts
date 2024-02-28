@@ -27,3 +27,16 @@ export const searchPlayer = async (name: string) => {
   });
   return res.data;
 };
+
+export const getPlayer = async (id: number) => {
+  const res = await api.get({
+    url: `/players/${id}`,
+    options: {
+      params: {
+        search: id,
+      },
+    },
+  });
+
+  return res;
+};

@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import styled from "@emotion/styled";
 import SearchIcon from "@mui/icons-material/Search";
 
 import Dropdown from "./Dropdown";
@@ -22,16 +23,20 @@ function Input() {
   };
 
   return (
-    <div>
+    <Div>
       <Search>
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
         <StyledInputBase value={search} onChange={inputValue} placeholder="Search Player" inputProps={{ "aria-label": "search" }} />
-        <Dropdown specificPlayers={specificPlayers} />
       </Search>
-    </div>
+      <Dropdown specificPlayers={specificPlayers} />
+    </Div>
   );
 }
 
 export default Input;
+
+const Div = styled.div`
+  position: relative;
+`;

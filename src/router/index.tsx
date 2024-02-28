@@ -4,6 +4,7 @@ import App from "../App";
 import Card from "../components/Card";
 import Layout from "../components/Layout";
 import PlayerLists from "../components/PlayerList/PlayerLists";
+import Profile from "../components/Profiles/Profile";
 import TeamLists from "../components/TeamList/TeamLists";
 
 const router = createBrowserRouter([
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
+      },
+      {
+        path: "/profile/:id",
+        element: <Profile />,
       },
       {
         path: "/card",
