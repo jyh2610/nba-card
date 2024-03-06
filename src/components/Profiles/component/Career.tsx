@@ -1,5 +1,9 @@
 function Career() {
-  return <div>Career</div>;
+  return (
+    <div>
+      <span>Career Stats</span>
+    </div>
+  );
 }
 
 export default Career;

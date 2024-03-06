@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import PlayerTitle from "./component/PlayerTitle";
+import Season from "./component/Season";
 import { getPlayer } from "../../api/custom/PlayerApis";
 import { PlayerShortProfile } from "../../types/player";
 
@@ -38,9 +39,10 @@ function Profile() {
   };
 
   return (
-    <div>
+    <section>
       <PlayerTitle player={player} />
-    </div>
+      <Season />
+    </section>
   );
 }
 

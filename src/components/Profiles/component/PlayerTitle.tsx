@@ -37,7 +37,6 @@ const Div = styled.div`
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  border: 1px solid black;
   padding: 10px;
   gap: 16px;
 `;
