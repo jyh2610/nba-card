@@ -2,12 +2,29 @@ import styled from "@emotion/styled";
 
 import { playerState } from "../../app/player";
 
-function Dropdown({ specificPlayers }: { specificPlayers: playerState }) {
+function Dropdown({
+  specificPlayers,
+  setSearch,
+  setIsOpen,
+}: {
+  specificPlayers: playerState;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   return (
     <DropdownDiv>
       {specificPlayers &&
         specificPlayers.map((player) => {
-          return <Li key={player.id}>{player.first_name + " " + player.last_name}</Li>;
+          return (
+            <Li
+              key={player.id}
+              onClick={() => {
+                setSearch(player.id + "");
+                setIsOpen(false);
+              }}>
+              {player.first_name + " " + player.last_name}
+            </Li>
+          );
         })}
     </DropdownDiv>
   );

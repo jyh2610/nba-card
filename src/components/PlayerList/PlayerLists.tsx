@@ -6,19 +6,13 @@ import List from "./List";
 import { getAllPlayers } from "../../api/custom/PlayerApis";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getPlayer } from "../../app/player";
+import { PlayerShortProfile } from "../../types/player";
 
-export interface PlayerShortProfile {
-  id: number;
-  first_name: string;
-  last_name: string;
-  position: string;
-}
 function PlayerLists() {
   const dispatch = useAppDispatch();
   const playerLists: PlayerShortProfile[] = useAppSelector((state) => state.player);
   const [page, setPage] = useState(1);
   const loaderRef = useRef<HTMLDivElement>(null);
-  console.log(playerLists);
 
   const fetchData = async () => {
     try {

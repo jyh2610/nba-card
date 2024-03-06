@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 import type { RootState } from "./store";
-import { PlayerShortProfile } from "../components/PlayerList/PlayerLists";
+import { PlayerShortProfile } from "../types/player";
 export type playerState = PlayerShortProfile[];
 
 const initialState: playerState = [];

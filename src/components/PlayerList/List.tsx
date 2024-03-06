@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-import { PlayerShortProfile } from "./PlayerLists";
+import { PlayerShortProfile } from "../../types/player";
 
 function List({ player }: { player: PlayerShortProfile }) {
   return (
