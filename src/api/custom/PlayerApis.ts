@@ -38,13 +38,13 @@ export const getPlayer = async (id: string) => {
 
 export const getStats = async (id: string, season: string) => {
   const res = await api.get({
-    url: `/season_averages`,
-    options: {
-      params: {
-        season: season,
-        "player_ids[]": id,
-      },
-    },
+    url: `/stats?season[]=2024&player_ids[]=237`,
+    // options: {
+    //   params: {
+    //     "season[]": season,
+    //     "player_ids[]": id,
+    //   },
+    // },
   });
   return res.data;
 };
